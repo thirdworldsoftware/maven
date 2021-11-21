@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        // Target
+        "target": "ES2020",
+        "lib": ["esnext"],
+        "module": "CommonJS",
+
+        // Build
+        "importHelpers": true,
+        "incremental": true,
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+
+        // Features
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "preserveConstEnums": true,
+
+        // Module resolution
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+
+        // Strictness
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "importsNotUsedAsValues": "error",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
+    }
+}
