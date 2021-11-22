@@ -8,7 +8,11 @@
         "rootDir": ".",
         "baseUrl": ".",
 
-        "paths": {},
+        "paths": {
+            "@lib/*": ["./lib/*"],
+            "@config/*": ["./lib/config/*"],
+            "@structures/*": ["./lib/structures/*"]
+        },
         "composite": true
     },
 
