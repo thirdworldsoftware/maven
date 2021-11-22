@@ -1,4 +1,4 @@
-import { SapphireClient, Store } from '@sapphire/framework';
+import { SapphireClient, Store, container } from '@sapphire/framework';
 import { config } from '@config/index';
 import { Ogma } from '@ogma/logger';
 import '@sapphire/pieces';
@@ -20,6 +20,8 @@ export class Client extends SapphireClient {
         });
 
         this.setupStoreEventHandlers();
+
+        container.__client = this;
     }
 
     async init() {
@@ -67,5 +69,11 @@ export class Client extends SapphireClient {
 
     public async destroy() {
         return super.destroy();
+    }
+}
+
+declare module '@sapphire/pieces' {
+    interface Container {
+        __client: Client;
     }
 }

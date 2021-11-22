@@ -1,20 +1,22 @@
 import type { IConfig } from '@config/index';
+import { join } from 'path';
 
 export const isDevenv = process.env.NODE_ENV !== 'production';
 
 export const config: IConfig = {
-	client: {
-		intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MESSAGES'],
+    client: {
+        intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MESSAGES'],
 
-		caseInsensitiveCommands: true,
-		caseInsensitivePrefixes: true,
+        baseUserDirectory: `${join(__dirname, 'pieces')}`,
+        caseInsensitiveCommands: true,
+        caseInsensitivePrefixes: true,
 
-		defaultPrefix: ';',
-	},
+        defaultPrefix: ';',
+    },
 
-	env: {
-		application: 'BOT',
-		development: isDevenv,
-		logLevel: isDevenv ? 'DEBUG' : 'INFO',
-	},
+    env: {
+        application: 'BOT',
+        development: isDevenv,
+        logLevel: isDevenv ? 'DEBUG' : 'INFO',
+    },
 };
