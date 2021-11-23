@@ -1,27 +1,42 @@
-# LocusBOT
+<div align="center">
+  <a href="https://github.com/synesta/maven">
+    <img src="https://cdn.discordapp.com/attachments/896963455708438552/897246055790411816/Logo_Transparent.png" alt="Logo" width="80" height="80">
+  </a>
 
-Discord bot for locus.solutions.
+<h3 align="center">Maven</h3>
 
-## Some information
+  <p align="center">
+    Multi-purpose discord bot
+    <br />
+    <a href="https://synesta.gitbook.io/maven-documentation/"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/synest/maven/issues">Found a bug?</a>
+  </p>
+</div>
 
-We are currently using ts-node, the tsc compiler just checks for errors without creating any files.
 
-## Installation
-
-Please do yourself a favour and use pnpm to install packages.
-
-You may need to regenerate the Prisma client (it should tell you if you do), to do that run `pnpm prisma:gen`.
-
-Fill out the [.env.example](.env.example) file and rename it to just .env.
+## Setup
+- <a href="https://classic.yarnpkg.com/en/docs/install#windows-stable">Install yarn</a>
+- Clone the repository
+- Open the cloned repository on your machine in a shell and write `yarn` to install dependencies
+- Change the prefix / token values in `config.json`
+- Start the bot with `node .`
 
 ## Contributing
 
-See [our contribution guide](contributing.md).
+If you have a suggestion that would make Maven better, please fork the repo and create a pull request. You can also open an issue.
+Don't forget to give the project a star! Thanks again!
 
-## Credits
+### License
 
-Developed by Legacy for Locus.solutions
+Maven is distributed under the MIT License.
 
-## License
+### Credits 
+- <a href="github.com/uwuLegacy">Legacy</a>
+- <a href="github.com/synesta">Synesta</a>
 
-Unlicensed as of now
+#### Contact me through:
+
+-   Email: synestamail@gmail.com
+-   Discord: synesta#5526
+-   Telegram: synpres
