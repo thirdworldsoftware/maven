@@ -4,7 +4,7 @@
   </a>
 
 <h3 align="center">Maven</h3>
-
+  <h3 align="center">This bot is a WIP! It is NOT ready to be hosted anywhere as of right now.</h3>
   <p align="center">
     Multi-purpose discord bot
     <br />
