@@ -2,6 +2,27 @@
 
 Discord bot for locus.solutions.
 
+## Some information
+
+We are currently using ts-node, the tsc compiler just checks for errors without creating any files.
+
+## Installation
+
+Please do yourself a favour and use pnpm to install packages.
+
+You may need to regenerate the Prisma client (it should tell you if you do), to do that run `pnpm prisma:gen`.
+
+Fill out the .env.example file and rename it to just .env.
+
+## Guidelines
+
+pleaZe follow these
+
+-   Use [pnpm](https://pnpm.io)
+-   Use prettier before committing code
+-   Test your changes locally before committing code
+-   `pnpm cz` when you are ready to commit code
+
 ## Credits
 
 Developed by Legacy for Locus.solutions

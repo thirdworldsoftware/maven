@@ -7,7 +7,8 @@
         "build": "tsc --noEmit -p src",
         "watch": "tsc --noEmit -p src -w",
         "start": "pnpm build && pnpm start:prod",
-        "start:prod": "ts-node -r tsconfig-paths/register -P ./src/tsconfig.json src/main"
+        "start:prod": "ts-node -r tsconfig-paths/register -P ./src/tsconfig.json src/main",
+        "prisma:gen": "prisma generate"
     },
     "author": "uwuLegacy",
     "license": "UNLICENSED",
