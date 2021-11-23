@@ -12,16 +12,11 @@ Please do yourself a favour and use pnpm to install packages.
 
 You may need to regenerate the Prisma client (it should tell you if you do), to do that run `pnpm prisma:gen`.
 
-Fill out the .env.example file and rename it to just .env.
+Fill out the [.env.example](.env.example) file and rename it to just .env.
 
-## Guidelines
+## Contributing
 
-pleaZe follow these
-
--   Use [pnpm](https://pnpm.io)
--   Use prettier before committing code
--   Test your changes locally before committing code
--   `pnpm cz` when you are ready to commit code
+See [our contribution guide](contributing.md).
 
 ## Credits
 

@@ -1,7 +1,8 @@
 import type { IConfig } from '@config/index';
 import { join } from 'path';
 
-export const isDevenv = process.env.NODE_ENV !== 'production';
+export const isDevenv =
+    process.env.NODE_ENV !== 'production' || Boolean(process.env.DEVENV);
 
 export const config: IConfig = {
     client: {
