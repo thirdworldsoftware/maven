@@ -19,8 +19,8 @@
 - <a href="https://pnpm.io">Install pnpm</a>
 - Clone the repository
 - Open the cloned repository on your machine in a shell and write `pnpm i` to install dependencies
-- Change the prefix / token values in `config.json`
-- Start the bot with `node .`
+- Change the env variables
+- Start the bot with `pnpm start`
 
 # Contribution guide
 If you have a suggestion that would make Maven better, please fork the repo and create a pull request. You can also open an issue.
