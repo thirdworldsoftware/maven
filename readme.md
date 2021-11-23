@@ -16,20 +16,33 @@
 
 
 ## Setup
-- <a href="https://classic.yarnpkg.com/en/docs/install#windows-stable">Install yarn</a>
+- <a href="https://pnpm.io">Install pnpm</a>
 - Clone the repository
-- Open the cloned repository on your machine in a shell and write `yarn` to install dependencies
+- Open the cloned repository on your machine in a shell and write `pnpm i` to install dependencies
 - Change the prefix / token values in `config.json`
 - Start the bot with `node .`
 
-## Contributing
-
+# Contribution guide
 If you have a suggestion that would make Maven better, please fork the repo and create a pull request. You can also open an issue.
 Don't forget to give the project a star! Thanks again!
 
+## Guidelines
+
+-   Use [pnpm](https://pnpm.io)
+-   Use prettier before committing code
+-   Test your changes locally before committing code
+-   `pnpm cz` when you are ready to commit code
+
+## Development setup
+
+You will likely require a development setup to test your changes. To get going,
+
+-   fill out the required environment variables with your own development credentials
+-   start a development server by setting the `DEVENV` environment variable to `true`
+
 ### License
 
-Maven is distributed under the MIT License.
+Maven is distributed under the Apache License 2.0.
 
 ### Credits 
 - <a href="github.com/uwuLegacy">Legacy</a>
