@@ -2,6 +2,7 @@ import { SapphireClient, Store, container } from '@sapphire/framework';
 import { config } from '@config/index';
 import { Ogma } from '@ogma/logger';
 import '@sapphire/pieces';
+import prisma from './prisma';
 
 export class Client extends SapphireClient {
     public consoleLogger: Ogma;
@@ -20,6 +21,7 @@ export class Client extends SapphireClient {
         });
 
         this.setupStoreEventHandlers();
+        this.setupPrismaEventHandlers();
 
         container.__client = this;
     }
@@ -39,15 +41,17 @@ export class Client extends SapphireClient {
     }
 
     private setupStoreEventHandlers() {
+        const context = 'LoaderService';
+
         Store.defaultStrategy.onLoad = (s, p) => {
             this.consoleLogger.info(`Loaded ${s.name}:${p.name}`, {
-                context: 'LoaderService',
+                context,
             });
         };
 
         Store.defaultStrategy.onUnload = (s, p) => {
             this.consoleLogger.info(`Unloaded ${s.name}:${p.name}`, {
-                context: 'LoaderService',
+                context,
             });
         };
 
@@ -55,16 +59,39 @@ export class Client extends SapphireClient {
             this.consoleLogger.error(
                 `${e.name} loading ${p}, info: ${e.message}`,
                 {
-                    context: 'LoaderService',
+                    context,
                 }
             );
         };
 
         Store.defaultStrategy.onLoadAll = (s) => {
             this.consoleLogger.info(`Finished loading ${s.name}`, {
-                context: 'LoaderService',
+                context,
             });
         };
+    }
+
+    private setupPrismaEventHandlers() {
+        const context = 'PrismaService';
+
+        prisma.$on('query', (ev) => {
+            this.consoleLogger.verbose(
+                `Received query - took ${ev.duration}ms, executed: ${ev.query}`,
+                {
+                    context,
+                }
+            );
+        });
+
+        const levels: ('info' | 'warn' | 'error')[] = ['info', 'warn', 'error'];
+
+        for (let level of levels) {
+            prisma.$on(level, (ev) => {
+                this.consoleLogger.info(`${ev.message}`, {
+                    context,
+                });
+            });
+        }
     }
 
     public async destroy() {
