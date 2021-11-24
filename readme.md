@@ -22,7 +22,7 @@
 -   Change the env variables
 -   Start the bot with `pnpm start`
 
-# Contribution guide
+## Contribution guide
 
 If you have a suggestion that would make Maven better, please fork the repo and create a pull request. You can also open an issue.
 Don't forget to give the project a star! Thanks again!
