@@ -10,7 +10,7 @@
     <br />
     <a href="https://synesta.gitbook.io/maven-documentation/"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/synest/maven/issues">Found a bug?</a>
+    <a href="https://github.com/synesta/maven/issues">Found a bug?</a>
   </p>
 </div>
 
