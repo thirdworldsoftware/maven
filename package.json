@@ -1,7 +1,7 @@
 {
     "name": "maven",
     "version": "1.0.0",
-    "description": "",
+    "description": "Be all and end all Discord bot for your server",
     "main": "dist/main.js",
     "scripts": {
         "build": "tsc --noEmit -p src",
@@ -10,8 +10,17 @@
         "start:prod": "ts-node -r tsconfig-paths/register -P ./src/tsconfig.json src/main",
         "prisma:gen": "prisma generate"
     },
-    "author": "uwuLegacy",
-    "license": "UNLICENSED",
+    "contributors": [
+        {
+            "name": "uwuLegacy",
+            "url": "https://github.com/uwuLegacy"
+        },
+        {
+            "name": "synesta",
+            "url": "https://github.com/synesta"
+        }
+    ],
+    "license": "Apache-2.0",
     "devDependencies": {
         "@sapphire/ts-config": "^3.1.4",
         "@types/node": "^16.11.9",
