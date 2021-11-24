@@ -14,8 +14,11 @@ export class InfoCommand extends Command {
         const embed = new MessageEmbed()
             .setTitle('Commands')
             .setDescription(`
-            **__# INFO__**
-            - botinfo / ping / serverinfo / help
+            **__# Fun__**
+            - coinflip / iq 
+
+            **__# Information__**
+            - botinfo / help / serverinfo
             `)
             .setColor('#5464af')
 
