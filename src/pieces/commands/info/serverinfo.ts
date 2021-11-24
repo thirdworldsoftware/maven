@@ -6,6 +6,7 @@ import { Message, MessageEmbed } from 'discord.js';
 @ApplyOptions<CommandOptions>({
     name: 'serverinfo',
     description: 'Shows various pieces of information related to the server',
+    runIn: ['GUILD_ANY'],
 })
 export class InfoCommand extends Command {
     public async messageRun(message: Message /*, args: Args */) {
@@ -16,7 +17,11 @@ export class InfoCommand extends Command {
             .addField('Channels:', `${message.guild?.channels.cache.size}`)
             .addField(
                 'Created At:',
-                `${message.guild?.createdAt.toLocaleTimeString()}`
+                `${message.guild?.createdAt.toDateString()} ${message.guild?.createdAt.toTimeString()}`
+            )
+            .addField(
+                'Owner:',
+                `${(await message.guild?.fetchOwner())?.user.tag}`
             )
             .setColor('#5464af');
 
