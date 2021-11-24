@@ -8,7 +8,8 @@
         "watch": "tsc --noEmit -p src -w",
         "start": "pnpm build && pnpm start:prod",
         "start:prod": "ts-node -r tsconfig-paths/register -P ./src/tsconfig.json src/main",
-        "prisma:gen": "prisma generate"
+        "prisma:gen": "prisma generate",
+        "cz": "cz"
     },
     "contributors": [
         {
@@ -26,6 +27,7 @@
         "@types/node": "^16.11.9",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",
+        "commitizen": "^4.2.4",
         "cz-conventional-changelog": "3.3.0",
         "eslint": "^8.3.0",
         "eslint-config-prettier": "^8.3.0",
