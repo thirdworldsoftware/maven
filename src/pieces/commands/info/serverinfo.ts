@@ -4,19 +4,21 @@ import { /* Args, */ Command, CommandOptions } from '@sapphire/framework';
 import { Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
-    name: 'ping',
-    description: 'Shows client ping'
+    name: 'serverinfo',
+    description: 'Shows various pieces of information related to the server'
 })
 export class InfoCommand extends Command {
     public async messageRun(message: Message /*, args: Args */) {
 
         const embed = new MessageEmbed()
-            .setTitle('Client Ping')
+            .setTitle('Server Information')
+            .addField('Server Name:', `${message.guild?.name}`)
+            .addField('Total Members:', `${message.guild?.memberCount}`)
+            .addField('Channels:', `${message.guild?.channels.cache.size}`)
+            .addField('Created At:', `${message.guild?.createdAt.toLocaleTimeString()}`)
             .setColor('#5464af')
-            .setDescription(`**Ping**: ${Math.round(this.container.client.ws.ping)}ms`)
 
         // Using the send function from the editable-commands plugin, not the base one
         send(message, { embeds: [embed] });
     }
 }
-
