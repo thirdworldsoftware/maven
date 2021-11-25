@@ -15,7 +15,7 @@ export class InfoCommand extends Command {
             .setDescription(
                 `
             **__# Fun__**
-            - coinflip / iq 
+            - coinflip / iq / pp / roll
 
             **__# Information__**
             - botinfo / help / serverinfo
