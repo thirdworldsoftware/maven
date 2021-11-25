@@ -71,7 +71,9 @@ export class Client extends SapphireClient {
         };
     }
 
-    private setupPrismaEventHandlers() {
+    private async setupPrismaEventHandlers() {
+        await prisma.$connect();
+
         const context = 'PrismaService';
 
         prisma.$on('query', (ev) => {

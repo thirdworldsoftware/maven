@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    mavendb:
+        image: postgres:latest
+        container_name: mavendb
+        restart: always
+        ports:
+            - 5432:5432
+        env_file:
+            - .env
+        volumes:
+            - mavendb:/var/lib/postgresql/data
+
+volumes:
+    mavendb:
+        name: mavendb-data
