@@ -18,8 +18,9 @@
 
 -   <a href="https://pnpm.io">Install pnpm</a>
 -   Clone the repository
--   Open the cloned repository on your machine in a shell and write `pnpm i` to install dependencies
 -   Change the env variables
+-   Open the cloned repository on your machine in a shell and write `pnpm i` to install dependencies
+-   Run `pnpm prisma:gen` to generate a prisma client
 -   Start the bot with `pnpm start`
 
 ## Contribution guide
