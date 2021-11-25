@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: maven
+        restart: always
+        ports:
+            - 3000:3000
+        depends_on:
+            - db
+        env_file:
+            - .env
+
+    db:
+        image: postgres:latest
+        container_name: mavendb
+        restart: always
+        ports:
+            - 5432:5432
+        env_file:
+            - .env
+        volumes:
+            - mavendb:/var/lib/postgres/data
+
+volumes:
+    maven:
+        name: maven-data
+    mavendb:
+        name: mavendb-data
