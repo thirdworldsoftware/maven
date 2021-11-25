@@ -3,19 +3,16 @@ FROM node:latest
 # Install pnpm
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
-# Install ts-node
-RUN pnpm install -g ts-node
-
 # Create app directory
 WORKDIR /app
 
 # Copy static files to container
-COPY package.json ./
-COPY pnpm-lock.yaml ./
-COPY prisma ./prisma/
+COPY package.json /app
+COPY pnpm-lock.yaml /app
+COPY prisma /app/prisma/
 
 # Install app dependencies
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile
 
 # Bundle app source
 COPY . .
