@@ -11,7 +11,8 @@
         "paths": {
             "@lib/*": ["./lib/*"],
             "@config/*": ["./lib/config/*"],
-            "@structures/*": ["./lib/structures/*"]
+            "@structures/*": ["./lib/structures/*"],
+            "@util/*": ["./lib/util/*"]
         },
         "composite": true
     },

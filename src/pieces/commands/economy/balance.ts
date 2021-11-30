@@ -6,7 +6,7 @@ import prisma from '@lib/prisma';
 
 @ApplyOptions<CommandOptions>({
     name: 'balance',
-    aliases: ['bal', 'bank', 'wallet'],
+    aliases: ['bal', 'wallet'],
     description: 'Check your balance.',
 })
 export class InfoCommand extends Command {

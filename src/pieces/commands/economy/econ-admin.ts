@@ -3,6 +3,7 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { Args } from '@sapphire/framework';
 import { SubCommandPluginCommand } from '@sapphire/plugin-subcommands';
 import { Message, MessageEmbed } from 'discord.js';
+import { send } from '@sapphire/plugin-editable-commands';
 
 type kWallet = 'wallet' | 'w';
 type kBank = 'bank' | 'b';
@@ -34,21 +35,33 @@ export class EconAdminCommand extends SubCommandPluginCommand {
         const amount = await args.pick('number');
 
         try {
-            const userDb = await prisma.user.findUnique({
+            const data =
+                storageType === 'wallet'
+                    ? { wallet: { increment: amount } }
+                    : { bank: { increment: amount } };
+
+            await prisma.user.update({
                 where: {
                     discord_id: user.id,
                 },
-                rejectOnNotFound: true,
+                data,
             });
+        } catch (err) {
+            if (err instanceof Error) {
+                const embed = new MessageEmbed()
+                    .setTitle('Unknown error during operation')
+                    .setDescription(err.message)
+                    .setColor('RED');
 
-            storageType === 'wallet'
-                ? (userDb.wallet += amount)
-                : (userDb.bank += amount);
-        } catch (err) {}
+                return send(message, { embeds: [embed] });
+            }
+        }
 
-        const embed = new MessageEmbed().setTitle(
-            `Added ${amount}$ to ${user.tag}'s ${storageType}'`
-        );
+        const embed = new MessageEmbed()
+            .setTitle(`Added ${amount} to ${user.tag}'s ${storageType}'`)
+            .setColor('GREEN');
+
+        send(message, { embeds: [embed] });
     }
 
     private static walletOrBank = Args.make<'bank' | 'wallet'>(

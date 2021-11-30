@@ -24,12 +24,12 @@
         "allowSyntheticDefaultImports": true,
 
         // Strictness
-        "strict": true,
         "forceConsistentCasingInFileNames": true,
         "importsNotUsedAsValues": "error",
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "noUnusedParameters": true,
+        "strictNullChecks": true
     }
 }
